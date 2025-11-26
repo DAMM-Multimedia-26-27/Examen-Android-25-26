@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LanzarDadoActivity">
+
+    <Button
+        android:id="@+id/bD6"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_margin="16dp"
+        android:text="6 caras"
+        app:layout_constraintBottom_toTopOf="@+id/bD12"
+        app:layout_constraintEnd_toStartOf="@+id/bD10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resDado" />
+
+    <TextView
+        android:id="@+id/resDado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Elige un dado"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/bD6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bD10"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_margin="16dp"
+        android:text="10 caras"
+        app:layout_constraintBottom_toBottomOf="@+id/bD6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bD6"
+        app:layout_constraintTop_toTopOf="@+id/bD6" />
+
+    <Button
+        android:id="@+id/bD12"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_margin="0dp"
+        android:text="12 caras"
+        app:layout_constraintBottom_toTopOf="@+id/editCaras"
+        app:layout_constraintEnd_toEndOf="@+id/bD6"
+        app:layout_constraintStart_toStartOf="@+id/bD6"
+        app:layout_constraintTop_toBottomOf="@+id/bD6" />
+
+    <Button
+        android:id="@+id/bD20"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:text="20 caras"
+        app:layout_constraintBottom_toBottomOf="@+id/bD12"
+        app:layout_constraintEnd_toEndOf="@+id/bD10"
+        app:layout_constraintStart_toStartOf="@+id/bD10"
+        app:layout_constraintTop_toTopOf="@+id/bD12" />
+
+    <EditText
+        android:id="@+id/editCaras"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_margin="16dp"
+        android:ems="10"
+        android:hint="Numero Caras"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bDN"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bD12" />
+
+    <Button
+        android:id="@+id/bDN"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_margin="16dp"
+        android:text="Lanzar"
+        app:layout_constraintBottom_toBottomOf="@+id/editCaras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editCaras"
+        app:layout_constraintTop_toTopOf="@+id/editCaras" />
+</androidx.constraintlayout.widget.ConstraintLayout>
