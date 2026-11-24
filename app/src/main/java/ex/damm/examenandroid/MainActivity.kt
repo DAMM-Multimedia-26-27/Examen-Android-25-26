@@ -23,9 +23,49 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        findViewById<Button>(R.id.bLanzarDado).setOnClickListener {
+            val intent = Intent(this, LanzarDadoActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.bConcatenarCadenas).setOnClickListener {
+            val intent = Intent(this, ConcatenarActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
+        gato = randint(1, 4)
+        val foto = findViewById<ImageView>(R.id.iFoto)
+
+//        foto.setImageDrawable(AppCompatResources.getDrawable(this,
+//            when (gato) {
+//                1 -> R.drawable.gatt1
+//                2 -> R.drawable.gatt2
+//                3 -> R.drawable.gatt3
+//                4 -> R.drawable.gatt4
+//                else -> R.drawable.gatt1
+//            }
+//        ))
+        val res = when (gato) {
+                1 -> R.drawable.gatt1
+                2 -> R.drawable.gatt2
+                3 -> R.drawable.gatt3
+                4 -> R.drawable.gatt4
+                else -> R.drawable.gatt1
+        }
+
+        foto.setImageDrawable(AppCompatResources.getDrawable(this, res))
+
+        foto.setOnClickListener {
+            val intent = Intent(this, ImagenActivity::class.java)
+            intent.putExtra("nombre",
+                findViewById<EditText>(R.id.editNombre).text.toString())
+            intent.putExtra("gato", res)
+            startActivity(intent)
+        }
+
         super.onResume()
     }
 }

@@ -20,10 +20,35 @@ class LanzarDadoActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val texto = findViewById<TextView>(R.id.resDado)
+
+        findViewById<Button>(R.id.bD6).setOnClickListener {
+            val num = randint(1, 6)
+            texto.text = num.toString()
+        }
+
+        findViewById<Button>(R.id.bD10).setOnClickListener {
+            val num = randint(1, 10)
+            texto.text = num.toString()
+        }
+
+        findViewById<Button>(R.id.bD12).setOnClickListener {
+            val num = randint(1, 12)
+            texto.text = num.toString()
+        }
+
+        findViewById<Button>(R.id.bD20).setOnClickListener {
+            val num = randint(1, 20)
+            texto.text = num.toString()
+        }
+
+        findViewById<Button>(R.id.bDN).setOnClickListener {
+            val max = findViewById<EditText>(R.id.editCaras)
+                .text.toString().toInt()
+            val num = randint(1, max)
+            texto.text = num.toString()
+        }
     }
 
-    fun lanzaDado(caras: Int, res: TextView) {
-        // Esto es una pista
-        res.text = randint(1, caras).toString()
-    }
 }
